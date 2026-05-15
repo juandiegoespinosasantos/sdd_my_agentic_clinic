@@ -2,7 +2,7 @@
 
 ## Automated Checks
 - [ ] `npm run build` completes without errors.
-- [ ] A test script (to be created) can successfully ping the `/health` endpoint.
+- [ ] `npm run test` executes the test suite successfully (including a health check test).
 
 ## Manual Verification
 - [ ] Run `npm run dev` and confirm the console output indicates the server is listening and the database is connected.

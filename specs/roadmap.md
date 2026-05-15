@@ -1,6 +1,6 @@
 # Roadmap
 
-1. **Phase 1: Project Scaffolding & Database Setup**
+1. **Phase 1: Project Scaffolding & Database Setup** (COMPLETE)
    - Initialize project, set up Express + TypeScript, configure SQLite.
 2. **Phase 2: Data Modeling & Core API**
    - Create models for Agents, Ailments, Therapies, and Appointments.

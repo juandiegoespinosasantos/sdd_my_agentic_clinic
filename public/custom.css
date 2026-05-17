@@ -1,0 +1,83 @@
+/* Advanced Polish for Bootstrap Dashboard */
+:root {
+    --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    --bg-color: #f0f4f8;
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: #334155;
+    transition: background-color 0.3s ease;
+}
+
+header {
+    background: var(--primary-gradient) !important;
+    border-radius: 0 0 2rem 2rem !important;
+    padding: 4rem 2rem !important;
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+    margin-bottom: 3rem !important;
+}
+
+.card {
+    border: none !important;
+    border-radius: 1.5rem !important;
+    box-shadow: var(--card-shadow) !important;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.btn-primary {
+    background: var(--primary-gradient) !important;
+    border: none !important;
+    padding: 0.8rem 1.5rem !important;
+    border-radius: 0.75rem !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+}
+
+.form-select, .form-control {
+    border-radius: 0.75rem !important;
+    padding: 0.8rem 1rem !important;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.form-select:focus, .form-control:focus {
+    border-color: #a855f7 !important;
+    box-shadow: 0 0 0 0.25rem rgba(168, 85, 247, 0.25) !important;
+}
+
+.list-group-item {
+    border: none !important;
+    background-color: #f8fafc !important;
+    margin-bottom: 0.75rem;
+    padding: 1rem 1.25rem !important;
+    border-radius: 1rem !important;
+    border-left: 5px solid #6366f1 !important;
+    transition: all 0.2s ease;
+}
+
+.list-group-item:hover {
+    background-color: #ede9fe !important;
+    transform: translateX(5px);
+}
+
+h2 {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.025em;
+    color: #1e293b;
+    margin-bottom: 1.5rem !important;
+}

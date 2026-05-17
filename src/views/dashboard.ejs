@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgentClinic Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <header>
@@ -12,62 +13,66 @@
     </header>
 
     <main>
-        <h2>Book an Appointment</h2>
-        <form action="/appointments" method="POST">
-            <label for="agent_id">Agent:</label>
-            <select name="agent_id" id="agent_id" required>
+        <section class="dashboard-section">
+            <h2>Book an Appointment</h2>
+            <form action="/appointments" method="POST">
+                <label for="agent_id">Agent:</label>
+                <select name="agent_id" id="agent_id" required>
+                    <% agents.forEach(agent => { %>
+                        <option value="<%= agent.id %>"><%= agent.name %></option>
+                    <% }) %>
+                </select>
+
+                <label for="ailment_id">Ailment:</label>
+                <select name="ailment_id" id="ailment_id" required>
+                    <% ailments.forEach(ailment => { %>
+                        <option value="<%= ailment.id %>"><%= ailment.name %></option>
+                    <% }) %>
+                </select>
+
+                <label for="therapy_id">Therapy:</label>
+                <select name="therapy_id" id="therapy_id" required>
+                    <% therapies.forEach(therapy => { %>
+                        <option value="<%= therapy.id %>"><%= therapy.name %></option>
+                    <% }) %>
+                </select>
+
+                <label for="appointment_date">Date:</label>
+                <input type="date" name="appointment_date" id="appointment_date" required>
+
+                <button type="submit">Book Appointment</button>
+            </form>
+
+            <h2>Upcoming Appointments</h2>
+            <ul>
+                <% appointments.forEach(app => { %>
+                    <li>Agent ID: <%= app.agent_id %> | Date: <%= app.appointment_date %></li>
+                <% }) %>
+            </ul>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Available Agents</h2>
+            <ul>
                 <% agents.forEach(agent => { %>
-                    <option value="<%= agent.id %>"><%= agent.name %></option>
+                    <li><%= agent.name %> - <%= agent.type %></li>
                 <% }) %>
-            </select>
+            </ul>
 
-            <label for="ailment_id">Ailment:</label>
-            <select name="ailment_id" id="ailment_id" required>
+            <h2>Ailments</h2>
+            <ul>
                 <% ailments.forEach(ailment => { %>
-                    <option value="<%= ailment.id %>"><%= ailment.name %></option>
+                    <li><%= ailment.name %></li>
                 <% }) %>
-            </select>
+            </ul>
 
-            <label for="therapy_id">Therapy:</label>
-            <select name="therapy_id" id="therapy_id" required>
+            <h2>Therapies</h2>
+            <ul>
                 <% therapies.forEach(therapy => { %>
-                    <option value="<%= therapy.id %>"><%= therapy.name %></option>
+                    <li><%= therapy.name %></li>
                 <% }) %>
-            </select>
-
-            <label for="appointment_date">Date:</label>
-            <input type="date" name="appointment_date" id="appointment_date" required>
-
-            <button type="submit">Book Appointment</button>
-        </form>
-
-        <h2>Available Agents</h2>
-        <ul>
-            <% agents.forEach(agent => { %>
-                <li><%= agent.name %> - <%= agent.type %></li>
-            <% }) %>
-        </ul>
-
-        <h2>Ailments</h2>
-        <ul>
-            <% ailments.forEach(ailment => { %>
-                <li><%= ailment.name %></li>
-            <% }) %>
-        </ul>
-
-        <h2>Therapies</h2>
-        <ul>
-            <% therapies.forEach(therapy => { %>
-                <li><%= therapy.name %></li>
-            <% }) %>
-        </ul>
-
-        <h2>Upcoming Appointments</h2>
-        <ul>
-            <% appointments.forEach(app => { %>
-                <li>Agent ID: <%= app.agent_id %> | Date: <%= app.appointment_date %></li>
-            <% }) %>
-        </ul>
+            </ul>
+        </section>
     </main>
 </body>
 </html>
